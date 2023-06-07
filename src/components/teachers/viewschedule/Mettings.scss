@@ -1,0 +1,20 @@
+.meeting-container {
+    flex: 1;
+    overflow-y: hidden;
+    padding: 10px;
+    .title {
+        padding-bottom: 10px;
+    }
+    .meeting-list {
+        height: 100%;
+        .meeting-item {
+            padding: 10px;
+            .check-meetings-button {
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+    }
+}

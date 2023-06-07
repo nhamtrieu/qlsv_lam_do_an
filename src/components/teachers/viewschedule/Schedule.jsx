@@ -1,5 +1,5 @@
 export default function Schedule() {
-    reuturn(
+    return (
         <div className="schedule">
             <div className="nav-schedule">
                 <div className="class-info">

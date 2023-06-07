@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import Comment from "../../../forms/Comment";
+import FormCancelMeerSchedule from "../../../forms/FormCancelMeetSchedule";
 import React, { useState } from "react";
 const Join = (status) => {
     const [showComment, setShowComment] = useState(false);
@@ -10,7 +11,13 @@ const Join = (status) => {
     const handleCloseComment = () => {
         setShowComment(false);
     };
-
+    const [showCancelForm, setShowCancelForm] = useState(false);
+    const handleShowCancelForm = () => {
+        setShowCancelForm(true);
+    };
+    const handleCloseCancelForm = () => {
+        setShowCancelForm(false);
+    };
     if (status === true) {
         return (
             <>
@@ -26,9 +33,18 @@ const Join = (status) => {
         );
     } else if (status === false) {
         return (
-            <Button variant="outlined" color="error">
-                Huy lich gap
-            </Button>
+            <>
+                <Button
+                    variant="outlined"
+                    color="error"
+                    onClick={handleShowCancelForm}
+                >
+                    Huy lich gap
+                </Button>
+                {showCancelForm && (
+                    <FormCancelMeerSchedule onClose={handleCloseCancelForm} />
+                )}
+            </>
         );
     } else {
         return (
