@@ -1,0 +1,51 @@
+.cancel-schedule {
+    display: grid;
+    width: 50%;
+    height: 50%;
+    grid-template-rows: 1fr 4fr 1fr;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    .time {
+        padding: 15px;
+        input[type="date"] {
+            padding: 15px;
+            font-family: "Roboto Mono", monospace;
+            font-size: 18px;
+            outline: none;
+            border-radius: 5px;
+        }
+        ::-webkit-calendar-picker-indicator {
+            background-color: #ffffff;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    }
+    .reason {
+        padding: 10px;
+        display: flex;
+        label {
+            margin-right: 10px;
+            align-self: flex-start;
+        }
+        textarea {
+            flex: 1;
+            height: 120px;
+            padding: 10px;
+            font-size: 15px;
+        }
+    }
+    .button {
+        align-self: flex-end;
+        justify-self: flex-end;
+        .send-btn {
+            margin-right: 20px;
+
+            width: 100px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .full-name {
+        cursor: pointer;
+    }
+    .group-teacher-button {
+        cursor: pointer;
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+        }
+    }
+}
