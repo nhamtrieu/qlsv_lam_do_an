@@ -1,4 +1,4 @@
-import hustLogo from "../../../assets/image/hust-logo-official_.3m.jpeg";
+import hustLogo from "../../assets/image/hust-logo-official_.3m.jpeg";
 import "./Header.scss";
 
 export default function Header() {
