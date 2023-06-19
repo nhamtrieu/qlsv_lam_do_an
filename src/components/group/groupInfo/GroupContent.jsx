@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import ScheduleItem from "./ScheduleItem";
+import ScheduleItem from "./schedule/ScheduleItem";
 
 export default function GroupContent() {
     return (
@@ -9,31 +9,15 @@ export default function GroupContent() {
                     <p className="content-title">Lịch họp</p>
                     <div className="list-schedule">
                         <Grid container gap={"16px"}>
-                            <Grid
-                                item
-                                xs={12}
-                                border={"1px solid #ccc"}
-                                borderBottom={"none"}
-                            >
-                                <ScheduleItem status={{ status: false }} />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <ScheduleItem status={{ status: true }} />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <ScheduleItem status={{ status: true }} />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <ScheduleItem
-                                    status={{
-                                        status: "cancel",
-                                    }}
-                                />
-                            </Grid>
+                            <ScheduleItem status={{ status: false }} />
+                            <ScheduleItem status={{ status: true }} />
+                            <ScheduleItem status={{ status: true }} />
+                            <ScheduleItem status={{ status: "cancel" }} />
                         </Grid>
                     </div>
                 </div>
             </div>
         </Grid>
+
     );
 }

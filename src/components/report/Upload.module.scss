@@ -1,0 +1,22 @@
+.uploadZone {
+    position: relative; 
+    .title{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        .submitButton {
+            position: absolute;
+            top: 0; /* Vị trí từ phía trên so với phần tử cha */
+            right: 0; /* Vị trí từ phía bên phải so với phần tử cha */
+        }
+    }
+    .fileList {
+        height: 100%;
+        width:100%;
+        overflow: auto;
+    }
+    .uploadButton {
+        
+
+    }
+}

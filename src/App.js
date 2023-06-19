@@ -4,9 +4,9 @@ import Header from "./components/header/Header";
 import Login from "./components/login/Login";
 import Groups from "./components/group/Groups";
 import Group from "./components/group/Group";
-import { Grid } from "@mui/material";
-import SubmitReport from "./components/forms/SubmitReport";
-import GroupHeader from "./components/group/groupInfo/GroupHeader";
+// import { Grid } from "@mui/material";
+// import SubmitReport from "./components/forms/SubmitReport";
+// import GroupHeader from "./components/group/groupInfo/GroupHeader";
 
 function App() {
     return (
@@ -17,7 +17,7 @@ function App() {
                 <Route path="/" element={<Login />} />
                 <Route path="/groups" element={<Groups />} />
                 <Route path="/groups/group" element={<Group />} />
-                <Route path="groups/group/nopbaocao"
+                {/* <Route path="/groups/group/nopbaocao"
                         element={
                             <Grid item md={10} sm={9}>
                                 <Grid
@@ -30,7 +30,7 @@ function App() {
                                 </Grid>
                             </Grid>
                         }
-                    ></Route>
+                    ></Route> */}
             </Routes>
         </div>
     );

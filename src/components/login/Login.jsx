@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Container, TextField, Button } from "@mui/material";
-import { NavLink } from "react-router-dom";
-import Groups from "../group/Groups"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -26,11 +26,7 @@ const Login = () => {
   };
 
   if (isLoggedIn) {
-    return (
-      <NavLink to="groups" end>
-        <Groups />
-      </NavLink>
-    )
+    navigate('/groups');
   }
 
   return (
