@@ -2,45 +2,28 @@ import { IconButton} from "@mui/material";
 import styles from "./ReportInfo.module.scss";
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 import FileList from "./fileList/FileList";
-import UploadFiles from "./Upload";
+import UploadFiles from "./uploadFile/UploadFile";
+import Order from "../order/Order";
 
 function ReportInfo({ onClose }) {
   const data = [
     {
-      id: 1,
-      name: 'Thư mục 1',
-      type: 'folder',
-      children: [
-        {
-          id: 2,
-          name: 'Thư mục con 1',
-          type: 'folder',
-          children: [
-            {
-              id: 4,
-              name: 'file1.txt',
-              type: 'file'
-            },
-            {
-              id: 5,
-              name: 'file2.txt',
-              type: 'file'
-            }
-          ]
-        },
-        {
-          id: 3,
-          name: 'file3.txt',
-          type: 'file'
-        }
-      ]
+      id: 4,
+      name: 'file1.txt',
+      type: 'file'
     },
     {
-      id: 6,
-      name: 'file4.txt',
+      id: 5,
+      name: 'file2.txt',
+      type: 'file'
+    },
+    {
+      id: 3,
+      name: 'file3.txt',
       type: 'file'
     }
-  ];
+  ]
+        ;
   return (
     <div className={styles.overlay}>
       <div className={styles.reportInfo}>
@@ -50,7 +33,9 @@ function ReportInfo({ onClose }) {
           <CloseSharpIcon/>
         </IconButton>
         <div className={styles.frame}>
-          <div className={styles.frame1}>gjgjgj</div>
+          <div className={styles.frame1}>
+            <Order data ={data}/>
+          </div>
           <div className={styles.frame2}>
             <div className={styles.frame21}>
               <h3>Bao cao da nop:</h3>

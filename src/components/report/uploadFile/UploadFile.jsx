@@ -1,8 +1,7 @@
 import React, { useState, useRef } from 'react';
-import HighlightOffSharpIcon from '@mui/icons-material/HighlightOffSharp';
 import Button from '@mui/material/Button';
-import styles from'./Upload.module.scss';
-import ListFile from './fileList/FileList';
+import styles from'./UploadFile.module.scss';
+import ListFile from '../fileList/FileList';
 
 export default function UploadFiles() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -13,9 +12,9 @@ export default function UploadFiles() {
     // Xử lý các tệp đã được tải lên ở đây
     setUploadedFiles((prevFiles) => [...prevFiles, ...files]);
   };
-
   const removeFile = (file) => {
     setUploadedFiles((prevFiles) => prevFiles.filter((f) => f !== file));
+    console.log("0=", file);
   };
 
   return (
@@ -33,14 +32,16 @@ export default function UploadFiles() {
             </Button>
           )}
         </div>
-        {uploadedFiles.length > 0 && (
-            <ListFile className={styles.fileZone} data ={uploadedFiles} />
-        )}
-        <Button onClick={() => fileInputRef.current.click()}
-          className={styles.uploadButton}
-          variant="contained" size="small">
-          Upload
-        </Button>
+        <div className={styles.fileZone}>
+          <ListFile data ={uploadedFiles} erase onErase={removeFile}/>
+        </div>
+        <div>
+          <Button onClick={() => fileInputRef.current.click()}
+            className={styles.uploadButton}
+            variant="contained" size="small">
+            Upload
+          </Button>
+        </div>
       </div>
     </>
   );

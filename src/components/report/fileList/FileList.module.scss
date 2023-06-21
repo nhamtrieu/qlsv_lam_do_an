@@ -2,7 +2,7 @@
     .fileListItem{
         border: 1px solid #ccc;
         border-radius: 3px;
-        margin: 5px 10px;
+        margin: 0px 10px 5px 10px;
         font-size: small;
         padding: 3px;
         background-color: aliceblue;
@@ -14,7 +14,7 @@
             text-overflow: ellipsis; /* Chuyển đổi thành dấu chấm chấm */
 
         }
-        .downloadIcon{
+        .downloadIcon, .closeIcon{
             position: absolute;
             right: 5px;
             bottom: 3px;
