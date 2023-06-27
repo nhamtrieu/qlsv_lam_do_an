@@ -1,25 +1,21 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/students/header/Header";
-import Classes from "./components/students/main/Classes";
-import ClassInfomation from "./components/students/main/ClassInfomation/ClassInfomation";
-import ClassSideBar from "./components/students/main/ClassInfomation/ClassSideBar";
-import ClassHeader from "./components/students/main/ClassInfomation/ClassHeader";
-import SubmitReport from "./components/forms/SubmitReport";
-import { Grid } from "@mui/material";
 import Student from "./components/students/Student";
 import Teacher from "./components/teachers/Teacher";
-
+import ClassInfomation from "./components/main/ClassInfomation/ClassInfomation";
+import ClassHeader from "./components/main/ClassInfomation/ClassHeader";
+import SubmitReport from "./components/forms/SubmitReport";
+import { Grid } from "@mui/material";
 function App() {
     return (
         <div className="App">
-            <Header />
-            <Outlet />
+            {/* <Outlet /> */}
             <Routes>
-                <Route path="/" element={<Classes />} />
+                <Route path="*" element={<Student />} />
+                <Route path="/teacher" element={<Teacher />} />
                 <Route path="/class1/*" element={<ClassInfomation />}>
                     <Route
-                        path="nopbaocao"
+                        path="nopbaocao/"
                         element={
                             <Grid item md={10} sm={9}>
                                 <Grid
@@ -32,11 +28,9 @@ function App() {
                                 </Grid>
                             </Grid>
                         }
-                    ></Route>
+                    />
                 </Route>
             </Routes>
-
-            {/* <Teacher /> */}
         </div>
     );
 }

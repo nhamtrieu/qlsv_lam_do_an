@@ -3,7 +3,7 @@ import ClassSideBar from "./ClassSideBar";
 import ClassHeader from "./ClassHeader";
 import ClassContent from "./ClassContent";
 import { Outlet, Route, Routes } from "react-router-dom";
-import Class from "../Class";
+// import Class from "../Class";
 
 import "./ClassInfomation.scss";
 

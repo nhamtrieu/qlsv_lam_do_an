@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
-import Comment from "../../../forms/Comment";
-import FormCancelMeerSchedule from "../../../forms/FormCancelMeetSchedule";
+import Comment from "../../forms/Comment";
+import FormCancelMeerSchedule from "../../forms/FormCancelMeetSchedule";
 import React, { useState } from "react";
 const Join = (status) => {
     const [showComment, setShowComment] = useState(false);

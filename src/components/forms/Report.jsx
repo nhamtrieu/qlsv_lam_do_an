@@ -1,6 +1,16 @@
 import { Grid } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import "./Report.scss";
+const listReportItem = [
+    {
+        nameReport: "Bai kiem tra abc",
+        timeSubmit: "1:30 pm",
+    },
+    {
+        nameReport: "Bai kiem tra abc",
+        timeSubmit: "1:30 pm",
+    },
+];
 const Report = () => {
     return (
         <div className="report-item">

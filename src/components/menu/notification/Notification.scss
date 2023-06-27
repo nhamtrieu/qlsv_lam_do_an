@@ -1,0 +1,45 @@
+.notification-list {
+    display: flex;
+    position: absolute;
+    background-color: #fff;
+    top: 50px;
+    right: 10%;
+    z-index: 4;
+    flex-direction: column;
+    width: calc(50% - 100px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    .list-header {
+        padding-bottom: 14px;
+    }
+    .notification-item {
+        .noti-header {
+            display: flex;
+            padding-bottom: 14px;
+            .img {
+                img {
+                    width: 24px;
+                    border-radius: 50%;
+                    height: 24px;
+                    margin-right: 12px;
+                }
+            }
+        }
+        .noti-main {
+            .title {
+                cursor: default;
+            }
+            .info-nofi {
+                cursor: pointer;
+                margin-top: 14px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                border-radius: 8px;
+                padding: 14px;
+                &:hover {
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+            }
+        }
+    }
+}
