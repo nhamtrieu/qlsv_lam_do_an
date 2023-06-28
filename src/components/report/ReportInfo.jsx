@@ -5,7 +5,7 @@ import FileList from "./fileList/FileList";
 import UploadFiles from "./uploadFile/UploadFile";
 import Order from "../order/Order";
 
-function ReportInfo({ onClose }) {
+export default function ReportInfo({ onClose }) {
   const data = [
     {
       id: 4,
@@ -25,30 +25,22 @@ function ReportInfo({ onClose }) {
   ]
         ;
   return (
-    <div className={styles.overlay}>
-      <div className={styles.reportInfo}>
-        <h2 className={styles.title}>Bao cao</h2>
-        <IconButton className={styles.closeBtn}  onClick={onClose}
-          variant="outlined" color="error">
-          <CloseSharpIcon/>
-        </IconButton>
-        <div className={styles.frame}>
-          <div className={styles.frame1}>
-            <Order data ={data}/>
+    <div className={styles.reportInfo}>
+      <h2 className={styles.title}>Bao cao</h2>
+      <div className={styles.frame}>
+        <div className={styles.frame1}>
+          <Order data ={data}/>
+        </div>
+        <div className={styles.frame2}>
+          <div className={styles.frame21}>
+            <h3>Bao cao da nop:</h3>
+            <FileList data={data} download/>
           </div>
-          <div className={styles.frame2}>
-            <div className={styles.frame21}>
-              <h3>Bao cao da nop:</h3>
-              <FileList data={data} download/>
-            </div>
-            <div className={styles.frame22}>
-              <><UploadFiles /></>
-            </div>
+          <div className={styles.frame22}>
+            <><UploadFiles /></>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default ReportInfo;

@@ -1,0 +1,12 @@
+.schedulePage{
+    padding: 10px;
+    width: 100%;
+    .name {
+        padding-bottom: 10px;;
+    }
+    .scheduleList{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
