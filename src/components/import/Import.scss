@@ -1,0 +1,25 @@
+.excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.excel-table th,
+.excel-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-wrap: nowrap;
+}
+
+.excel-table th {
+    text-wrap: unset;
+}
+
+.excel-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.excel-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
