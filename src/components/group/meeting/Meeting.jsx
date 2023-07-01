@@ -2,7 +2,7 @@ import { Button, IconButton} from "@mui/material";
 import styles from "./Meeting.module.scss";
 import { useState } from "react";
 import ReportInfo from "../../report/ReportInfo";
-import Overlay from "../../../overlay/Overlay";
+import Overlay from "../../../others/overlay/Overlay";
 
 function Meeting({}) {
   const [showOverlay, setShowOverlay] = useState(false);

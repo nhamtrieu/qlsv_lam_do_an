@@ -1,0 +1,25 @@
+th, td{
+    border: 1px solid #e4e4e4;
+}
+.time {
+    border: none;
+    width: 50px;
+    text-align: right;
+    vertical-align: top;
+    padding-right: 10px;
+    font-size: small;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    tr{
+        height: 70px;
+    }
+    th{
+        width: 200px;
+    }
+    td{
+        position: relative;
+    }
+
+}

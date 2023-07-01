@@ -19,7 +19,7 @@ export default function GroupHeader() {
                 </NavLink>
                 <NavLink to="freeTime">
                     <Button variant={"outlined"} className="freeTime">
-                        Nop bao cao
+                        Lịch rảnh
                     </Button>
                 </NavLink>
             </nav>

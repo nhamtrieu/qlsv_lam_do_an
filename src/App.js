@@ -1,14 +1,12 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/header/Header";
-// import Login from "./components/login/Login";
-// import Groups from "./components/group/Groups";
-// import Group from "./components/group/Group";
 import HomePage from "./pages/home/Home";
 import GroupInfo from "./pages/groupInfo/GroupInfo";
 import SchedulePage from "./pages/groupInfo/schedulePage/SchedulePage";
+import FreeTimePage from "./pages/groupInfo/freeTimePage/FreeTimePage";
 
-function App() {
+export default function App() {
     return (
         <div className="App">
             <Header />
@@ -16,10 +14,9 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/group" element={<GroupInfo />}>
                     <Route path="schedule"  element={<SchedulePage/>} />
+                    <Route path="freeTime"  element={<FreeTimePage />} />
                 </Route>
             </Routes>
         </div>
     );
 }
-
-export default App;

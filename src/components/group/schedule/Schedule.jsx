@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import showStatus from "./JoinStatus.jsx";
 import Meeting from "../meeting/Meeting.jsx"
 import { useState } from "react";
-import Overlay from "../../../overlay/Overlay.jsx";
+import Overlay from "../../../others/overlay/Overlay.jsx";
 import CancelMeeting from "../../form/CancelMeeting.jsx";
 import {Button} from "@mui/material";
 import styles from "./Schedule.module.scss";

@@ -14,7 +14,7 @@ export default function GroupInfo(){
                         
                         <Route path="/group/schedule" element={<ScheduleItem />} />
                     </Routes> */}
-                    <Outlet/>
+                    <Outlet />
                 </Grid>
             </Grid>
         </div>
