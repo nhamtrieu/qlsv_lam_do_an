@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./Header.scss";
 import hustLogo from "../../assets/image/hust-logo-official_.3m.jpeg";
 import Notification from "../menu/notification/Notification";
-
-import { useRef, useEffect } from "react";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 export const useShowNotification = () => {
     const [showNotification, setShowNotification] = useState(false);
     const handleShowNotification = () => {
@@ -28,19 +27,6 @@ export default function Header({
     handleHideNotification,
     toggleNoti,
 }) {
-    const notiRef = useRef(null);
-    const handleClickOutside = (event) => {
-        if (notiRef.current && !notiRef.current.contains(event.target)) {
-            handleHideNotification();
-        } else {
-        }
-    };
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("click", handleClickOutside);
-        };
-    }, []);
     return (
         <div className="main-header">
             <div className="university">
@@ -61,12 +47,14 @@ export default function Header({
                         src={hustLogo}
                         alt="avatar"
                         className="avatar"
-                        ref={notiRef}
-                        onClick={toggleNoti}
+                        // ref={notiRef}
                     />
                     {showNotification && (
                         <Notification hideNoti={handleHideNotification} />
                     )}
+                    <div className="noti-icon" onClick={toggleNoti}>
+                        <NotificationsIcon />
+                    </div>
                 </div>
                 <div className="now-schedule">
                     <p>Tuần 30 (Tuần học thứ 6): </p>

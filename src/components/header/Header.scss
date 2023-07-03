@@ -32,11 +32,28 @@
         flex-direction: column;
         padding: 15px;
         align-items: flex-end;
-        .avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
+        .profile {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .avatar {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .noti-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 4px;
+                cursor: pointer;
+                color: #fff;
+                border-radius: 50%;
+                border: 1px solid;
+                width: 30px;
+                height: 30px;
+            }
         }
         .now-schedule {
             color: #fff;

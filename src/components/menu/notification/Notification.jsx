@@ -27,11 +27,9 @@ const NotificationItem = () => {
 };
 
 const Notification = ({ hideNoti }) => {
-    // const { handleHideNotification } = useShowNotification();
     const notiRef = useRef(null);
     const handleClickOutside = (event) => {
         if (notiRef.current && !notiRef.current.contains(event.target)) {
-            // console.log(notiRef);
             hideNoti();
         } else {
             // console.log("out");
@@ -46,7 +44,7 @@ const Notification = ({ hideNoti }) => {
     return (
         <div
             className="notification-list"
-            // ref={notiRef}
+            ref={notiRef}
             onClick={handleClickOutside}
         >
             <div className="list-header">Thong bao</div>
