@@ -3,7 +3,7 @@ import styles from "./ReportInfo.module.scss";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import FileList from "./fileList/FileList";
 import UploadFiles from "./uploadFile/UploadFile";
-import Order from "../components/order/Order";
+import Order from "../order/Order";
 
 function ReportInfo({ onClose }) {
     const data = [

@@ -1,0 +1,123 @@
+.overlay {
+    width: 100%;
+    // height: 100vh;
+    background-color: rgba(127, 127, 127, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    .container {
+        width: 70%;
+        background-color: #fff;
+        border-radius: 6px;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        .header {
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title {
+                font-weight: 700;
+                font-size: 14px;
+            }
+            .closeIcon {
+                cursor: pointer;
+                font-size: 21px;
+                font-weight: 700;
+                opacity: 0.2;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .body {
+            display: flex;
+            padding: 15px;
+            flex-wrap: wrap;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #e5e5e5;
+            .info {
+                width: 50%;
+                padding: 0 15px;
+                .avatar {
+                    .title {
+                        margin-bottom: 10px;
+                    }
+                    .studentAvatar {
+                        width: 158px;
+                        border: 1px solid rgb(229, 229, 229);
+                    }
+                    .upload {
+                        margin-left: 40px;
+                        border: 1px solid #ccc;
+                        width: 90px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 4px;
+                    }
+                }
+                .infoItem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                    .infoValue {
+                        input {
+                            display: block;
+                            width: 100%;
+                            height: 34px;
+                            padding: 6px 12px;
+                            font-size: 14px;
+                            line-height: 1.42857143;
+                            color: #555;
+                            background-color: #fff;
+                            background-image: none;
+                            border: 1px solid #ccc;
+                            outline: none;
+                            border-radius: 4px;
+                            -webkit-box-shadow: inset 0 1px 1px
+                                rgba(0, 0, 0, 0.075);
+                            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                            -webkit-transition: border-color ease-in-out 0.15s,
+                                -webkit-box-shadow ease-in-out 0.15s;
+                            -o-transition: border-color ease-in-out 0.15s,
+                                box-shadow ease-in-out 0.15s;
+                            transition: border-color ease-in-out 0.15s,
+                                box-shadow ease-in-out 0.15s;
+                            &:focus {
+                                border-color: #66afe9;
+                                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+                                    0 0 8px rgba(102, 175, 233, 0.6);
+                            }
+                        }
+                        .disable {
+                            cursor: not-allowed;
+                            user-select: none;
+                            &:focus {
+                                border-color: #ccc;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+            p {
+                text-align: center;
+                width: 100%;
+                color: #ff0000;
+                padding: 3px;
+            }
+        }
+        .footer {
+            padding: 15px;
+            text-align: right;
+        }
+    }
+}

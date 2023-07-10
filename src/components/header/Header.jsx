@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Header.scss";
 import hustLogo from "../../assets/image/hust-logo-official_.3m.jpeg";
 import Notification from "../menu/notification/Notification";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import AccountInfo from "../menu/info/AccountInfo";
+
 export const useShowNotification = () => {
     const [showNotification, setShowNotification] = useState(false);
     const handleShowNotification = () => {
         setShowNotification(true);
     };
+
     const handleHideNotification = () => {
         setShowNotification(false);
     };
+
     const handleToggleNoti = () => {
-        setShowNotification(!showNotification);
+        setShowNotification((prevState) => !prevState);
     };
+
     return {
         showNotification,
         handleHideNotification,
@@ -22,11 +27,21 @@ export const useShowNotification = () => {
     };
 };
 
-export default function Header({
-    showNotification,
-    handleHideNotification,
-    toggleNoti,
-}) {
+export default function Header({ handleShowStudentInfo }) {
+    const [showAccInfo, setShowAccInfo] = useState(false);
+    const handleToggleShowAccInfo = () => {
+        setShowAccInfo(!showAccInfo);
+    };
+    const handelHideAccInfo = () => {
+        setShowAccInfo(false);
+    };
+    const {
+        showNotification,
+        handleHideNotification,
+        handleToggleNoti,
+        handleShowNotification,
+    } = useShowNotification();
+
     return (
         <div className="main-header">
             <div className="university">
@@ -43,21 +58,31 @@ export default function Header({
             </div>
             <div className="info-student">
                 <div className="profile">
-                    <img
-                        src={hustLogo}
-                        alt="avatar"
-                        className="avatar"
-                        // ref={notiRef}
-                    />
+                    <div className="avatar-container">
+                        <img
+                            src={hustLogo}
+                            alt="avatar"
+                            className="avatar"
+                            onClick={handleToggleShowAccInfo}
+                        />
+                        {showAccInfo && (
+                            <AccountInfo
+                                handleShowStudentInfo={handleShowStudentInfo}
+                                handelHideAccInfo={handelHideAccInfo}
+                            />
+                        )}
+                    </div>
                     {showNotification && (
-                        <Notification hideNoti={handleHideNotification} />
+                        <Notification
+                            handleHideNotification={handleHideNotification}
+                        />
                     )}
-                    <div className="noti-icon" onClick={toggleNoti}>
+                    <div className="noti-icon" onClick={handleToggleNoti}>
                         <NotificationsIcon />
                     </div>
                 </div>
                 <div className="now-schedule">
-                    <p>Tuần 30 (Tuần học thứ 6): </p>
+                    <p>Tuần 30 (Tuần học thứ 6):</p>
                     <p>24/04-29/04</p>
                 </div>
             </div>

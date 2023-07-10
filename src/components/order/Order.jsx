@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
 import styles from "./Order.module.scss";
-import FileList from "../../report/fileList/FileList";
+import FileList from "../report/fileList/FileList";
 
 export default function Order(props) {
     const [accepted, setAccepted] = useState(true);

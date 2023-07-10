@@ -1,29 +1,20 @@
-import Report from "../forms/Report";
-import Header, { useShowNotification } from "../header/Header";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Classes from "../main/Classes";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
 import ClassInfomation from "../main/ClassInfomation/ClassInfomation";
 import ClassHeader from "../main/ClassInfomation/ClassHeader";
 import SubmitReport from "../forms/SubmitReport";
 import { Grid } from "@mui/material";
+import Header from "../header/Header";
+
 const Student = () => {
-    const {
-        showNotification,
-        handleHideNotification,
-        handleShowNotification,
-        handleToggleNoti,
-    } = useShowNotification();
     return (
         <>
-            <Header
-                showNotification={showNotification}
-                handleHideNotification={handleHideNotification}
-                handleShowNotification={handleShowNotification}
-                toggleNoti={handleToggleNoti}
-            />
+            <Header />
+            <Outlet />
             <Classes />
             {/* <Notification /> */}
             {/* <Report /> */}
+
             <Routes>
                 <Route path="/class1" element={<ClassInfomation />}>
                     <Route

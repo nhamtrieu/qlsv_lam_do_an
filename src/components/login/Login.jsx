@@ -13,7 +13,6 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
-    const borderWhite = useState();
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
     };
@@ -22,14 +21,14 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (username === "admin" && password === "password") {
-            setIsLoggedIn(true);
-        } else {
-            alert("Tên đăng nhập hoặc mật khẩu không chính xác");
-        }
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (username === "admin" && password === "password") {
+    //         setIsLoggedIn(true);
+    //     } else {
+    //         alert("Tên đăng nhập hoặc mật khẩu không chính xác");
+    //     }
+    // };
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -38,17 +37,23 @@ const Login = () => {
                 username: username,
                 password: password,
             });
-            console.log(response.data);
+            console.log("login response", response);
             const { token } = response.data;
             Cookies.set("qlsv_test_cookie", token);
-            console.log("login successfull", token);
+            // console.log("login successfull", token);
+
+            if (response.status === 200) {
+                setIsLoggedIn(true);
+                localStorage.setItem("isLogin", true);
+                localStorage.setItem("qlsv_token", token);
+            }
         } catch (error) {
             console.log(error);
         }
     };
 
     if (isLoggedIn) {
-        navigate("/class1");
+        navigate("/");
     }
 
     return (

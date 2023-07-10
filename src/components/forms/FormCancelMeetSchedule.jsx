@@ -1,9 +1,25 @@
 import { Button } from "@mui/material";
 import "./FormCancelMeetSchedule.scss";
+import { useRef, useEffect } from "react";
 function FormCancelMeerSchedule({ onClose }) {
+    const commentRef = useRef(null);
+    useEffect(() => {
+        const handleClickOutSide = (event) => {
+            if (
+                commentRef.current &&
+                !commentRef.current.contains(event.target)
+            ) {
+                onClose();
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutSide);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutSide);
+        };
+    }, [onClose]);
     return (
         <div className="overlay">
-            <form action="" className="cancel-schedule">
+            <form action="" className="cancel-schedule" ref={commentRef}>
                 <div className="time">
                     <label htmlFor="date">Chon ngay:</label>
                     <input type="date" id="date" />

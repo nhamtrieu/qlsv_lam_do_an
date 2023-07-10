@@ -1,8 +1,8 @@
 import avata from "../../../assets/image/hust-logo-official_.3m.jpeg";
 import "./Notification.scss";
 
-// import { useShowNotification } from "../../students/header/Header";
-import { useRef, useEffect } from "react";
+import { useShowNotification } from "../../header/Header";
+import { useRef, useEffect, useState } from "react";
 const NotificationItem = () => {
     return (
         <div className="notification-item">
@@ -26,27 +26,11 @@ const NotificationItem = () => {
     );
 };
 
-const Notification = ({ hideNoti }) => {
+const Notification = () => {
     const notiRef = useRef(null);
-    const handleClickOutside = (event) => {
-        if (notiRef.current && !notiRef.current.contains(event.target)) {
-            hideNoti();
-        } else {
-            // console.log("out");
-        }
-    };
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("click", handleClickOutside);
-        };
-    }, []);
+
     return (
-        <div
-            className="notification-list"
-            ref={notiRef}
-            onClick={handleClickOutside}
-        >
+        <div className="notification-list" ref={notiRef}>
             <div className="list-header">Thong bao</div>
             <NotificationItem />
         </div>
